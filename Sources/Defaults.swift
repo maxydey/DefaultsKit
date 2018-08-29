@@ -32,6 +32,12 @@ public class DefaultsKey {}
 ///     static let someKey = Key<ValueType>("someKey")
 public final class Key<ValueType: Codable>: DefaultsKey {
     let _key: String
+    
+    public var rawKey: String {
+        get {
+            return _key
+        }
+    }
     public init(_ key: String) {
         _key = key
     }
