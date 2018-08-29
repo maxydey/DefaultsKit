@@ -31,7 +31,7 @@ public class DefaultsKey {}
 ///
 ///     static let someKey = Key<ValueType>("someKey")
 public final class Key<ValueType: Codable>: DefaultsKey {
-    fileprivate let _key: String
+    let _key: String
     public init(_ key: String) {
         _key = key
     }
@@ -92,10 +92,10 @@ public final class Defaults {
             return decoded
         } catch {
             #if DEBUG
-                print(error)
+            print(error)
             #endif
         }
-
+        
         return nil
         
     }
@@ -118,7 +118,7 @@ public final class Defaults {
             userDefaults.synchronize()
         } catch {
             #if DEBUG
-                print(error)
+            print(error)
             #endif
         }
     }
